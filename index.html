@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food vs Zombie</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <div class="play-area">
+        <section class="stage-wrap" aria-label="Food vs Zombie game">
+          <div class="game-stage" id="gameStage">
+            <img
+              class="girl-sprite"
+              id="girlSprite"
+              src="assets/generated/chef-girl.png"
+              alt="chef girl"
+              draggable="false"
+            />
+            <div class="zombie-layer" id="zombieLayer"></div>
+            <div class="projectile-layer" id="projectileLayer"></div>
+            <div class="burst-layer" id="burstLayer"></div>
+          </div>
+        <div class="status-panel" id="statusPanel" hidden>
+          <h1 id="statusTitle">Level Clear</h1>
+          <p id="statusText">The snack attack worked.</p>
+          <div class="reward-panel" id="rewardPanel" hidden>
+            <img id="rewardImage" alt="" draggable="false" />
+            <strong id="rewardText">New food unlocked</strong>
+          </div>
+          <button id="restartButton" type="button">Play Again</button>
+        </div>
+        </section>
+
+        <section class="keyboard-wrap" aria-label="Typing trainer">
+          <canvas id="keyboardCanvas" width="1120" height="340"></canvas>
+        </section>
+      </div>
+
+      <aside class="control-bar">
+        <div class="brand">
+          <span class="brand-mark">FVZ</span>
+          <div>
+            <h1>Food vs Zombie</h1>
+            <p id="levelLabel">Level 1 · 3 lanes</p>
+          </div>
+        </div>
+
+        <label class="typing-box">
+          <span>Type a zombie word</span>
+          <input
+            id="wordInput"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-label="Type the word above a zombie"
+            autofocus
+          />
+        </label>
+
+        <div class="hud-grid" aria-live="polite">
+          <div>
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>Health</span>
+            <strong id="health">5</strong>
+          </div>
+          <div>
+            <span>Zombies</span>
+            <strong id="remaining">0</strong>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
